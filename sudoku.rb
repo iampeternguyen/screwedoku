@@ -12,6 +12,7 @@ class SudokuGame
 
   def initialize(board)
     @board = board
+    board.render
   end
 
   def retrieve_pos_from_ui
@@ -50,8 +51,9 @@ class SudokuGame
     Integer(value)
   end
 
-  def process_parameters
+  def play_turn
     pos_to_val(retrieve_pos_from_ui, retrieve_value_from_ui)
+    board.render
   end
 
   def pos_to_val(p, v)
@@ -59,7 +61,7 @@ class SudokuGame
   end
 
   def run
-    process_parameters until game_over?
+    play_turn until game_over?
     puts "Congratulations, you win!"
   end
 
