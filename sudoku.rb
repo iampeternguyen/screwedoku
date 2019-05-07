@@ -10,10 +10,12 @@ class SudokuGame
   end
 
   def initialize(board)
-    @board = [[]]
+    @board = board
   end
 
   def method_missing(method_name, *args)
+    p method_name
+    p args
     if method_name =~ /val/
       Integer(1)
     else
@@ -85,3 +87,4 @@ end
 
 
 game = SudokuGame.from_file("puzzles/sudoku1.txt")
+game.run
