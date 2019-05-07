@@ -5,8 +5,7 @@ puts "Only contractors write code this bad.".yellow
 
 class SudokuGame
   def self.from_file(filename)
-    board = self.from_file(filename)
-    self.new(board)
+    @board = Board.from_file(filename)
   end
 
   def initialize(board)
