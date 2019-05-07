@@ -81,6 +81,7 @@ class Board
   private
   attr_reader :grid
 end
+require 'colorize'
 
 class Tile
   attr_reader :value
