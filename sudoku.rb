@@ -34,10 +34,11 @@ class SudokuGame
 
   def parse_pos(pos)
     pos = pos.split(',').to_a.map(&:to_i)
-    p pos
-
   end
 
+  def parse_val(val)
+    Integer(val)
+  end
   def get_val
     val = nil
     until val && valid_val?(val)
